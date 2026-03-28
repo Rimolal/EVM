@@ -2,13 +2,13 @@ from typing import List
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        cleaned = ''.join(x for x in s if x.isalnum()).lower()
-        if len(cleaned) == 0:
+        c = ''.join(x for x in s if x.isalnum()).lower()
+        if len(c) == 0:
             return True
         
-        len_cleaned = len(cleaned)
-        for i in range(len_cleaned // 2):
-            if cleaned[i] != cleaned[len_cleaned - i - 1]:
+        len_c = len(c)
+        for i in range(len_c // 2):
+            if c[i] != c[len_c - i - 1]:
                 return False
         return True
 
