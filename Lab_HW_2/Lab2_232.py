@@ -7,6 +7,7 @@ class MyQueue:
     def push(self, x: int) -> None:
         self.stack_in.append(x)
 
+
     def pop(self) -> int:
         if not self.stack_out:
             while self.stack_in:
@@ -21,17 +22,3 @@ class MyQueue:
 
     def empty(self) -> bool:
         return not self.stack_in and not self.stack_out
-
-
-obj = MyQueue()
-    
-obj.push(1)
-obj.push(2)
-obj.push(3)
-    
-print(f"peek: {obj.peek()}")
-print(f"pop: {obj.pop()}")
-print(f"empty: {obj.empty()}")
-print(f"pop: {obj.pop()}")
-print(f"pop: {obj.pop()}")
-print(f"empty: {obj.empty()}")

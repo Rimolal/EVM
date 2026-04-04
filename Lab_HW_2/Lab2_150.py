@@ -10,14 +10,14 @@ class Solution:
             else:
                 y = float(stack.pop())
                 x = float(stack.pop())
-                if i == '+':
-                    stack.append(x + y)
-                elif i == '-':
-                    stack.append(x - y)
+                if i == '/':
+                    stack.append(x // y)
                 elif i == '*':
                     stack.append(x * y)
-                elif i == '/':
-                    stack.append(int(x / y))
+                elif i == '+':
+                    stack.append(x + y)
+                else:
+                    stack.append(x - y)
         return int(stack[0])
 
 solution = Solution()
