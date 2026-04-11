@@ -8,10 +8,10 @@ class Solution:
                 stack.append(i)
             
             else:
-                y = float(stack.pop())
-                x = float(stack.pop())
+                y = int(stack.pop())
+                x = int(stack.pop())
                 if i == '/':
-                    stack.append(x // y)
+                    stack.append(int(x / y))
                 elif i == '*':
                     stack.append(x * y)
                 elif i == '+':
