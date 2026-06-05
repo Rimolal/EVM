@@ -6,14 +6,13 @@ class Solution:
         pacific = [[False] * n for _ in range(m)]
         atlantic = [[False] * n for _ in range(m)]
 
-        def dfs(x, y, reachable):
-            reachable[x][y] = True
-            directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
-            for dx, dy in directions:
-                nx, ny = x + dx, y + dy
-                if 0 <= nx < m and 0 <= ny < n:
-                    if not reachable[nx][ny] and heights[nx][ny] >= heights[x][y]:
-                        dfs(nx, ny, reachable)
+        def dfs(x, y, visited):
+            visited[x][y] = True
+            for b_x, b_y in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
+                cur_x, cur_y = x + b_x, y + b_y
+                if 0 <= cur_x < m and 0 <= cur_y < n:
+                    if not visited[cur_x][cur_y] and heights[cur_x][cur_y] >= heights[x][y]:
+                        dfs(cur_x, cur_y, visited)
         
         for i in range(m):
             dfs(i, 0, pacific)
